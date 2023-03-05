@@ -50,7 +50,9 @@
         let output = document.getElementById("output");
         let outputTimeMinutes = Math.floor(outputTime / 60);
         let outputTimeSeconds = outputTime - (outputTimeMinutes * 60);
-        output.innerHTML = '3kSteeplechase predicted time: ' + outputTimeMinutes + ':' + outputTimeSeconds.toFixed(2)}
+        if (outputTimeSeconds < 10)
+          outputTimeSeconds = String(outputTimeSeconds).padStart(5, '0')
+        output.innerHTML = '3kSteeplechase predicted time: ' + outputTimeMinutes + ':' + outputTimeSeconds}
     </script>
 
     <br><br><br><br>
