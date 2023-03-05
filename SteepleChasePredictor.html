@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3k Steeplechase Conversion Algorithm</title>
+  </head>
+  <body>
+    <h1>3k Steeplechase Conversion Algorithm</h1>
+    <form>
+      <strong>Enter 5k Time:</strong>
+      <input type="number" id="5kTimeMinutes">
+      <label for="5kTimeSeconds">:</label>
+      <input type="number" id="5kTimeSeconds">
+      <label for="5kTimeMilliSeconds">.</label>
+      <input type="number" id="5kTimeMilliSeconds">
+      <br><br>
+      <strong>Enter 3k Time:</strong>
+      <input type="number" id="3kTimeMinutes">
+      <label for="3kTimeSeconds">:</label>
+      <input type="number" id="3kTimeSeconds">
+      <label for="3kTimeMilliSeconds">.</label>
+      <input type="number" id="3kTimeMilliSeconds">
+      <br><br>
+      <strong>Enter 1500 Time:</strong>
+      <input type="number" id="1500TimeMinutes">
+      <label for="1500TimeSeconds">:</label>
+      <input type="number" id="1500TimeSeconds">
+      <label for="1500TimeMilliSeconds">.</label>
+      <input type="number" id="1500TimeMilliSeconds">
+      <br><br>
+      <button onclick="convertTime()">Predict 3kSteeplechase Time</button>
+    </form>
+    <p id="output"></p>
+    <script>
+      function convertTime() {
+        let outputTime = 35.00209 +
+          0.1529 * (document.getElementById("5kTimeMinutes").value * 60 + 
+                parseInt(document.getElementById("5kTimeSeconds").value) +
+                parseInt(document.getElementById("5kTimeMilliSeconds").value) / 100) +
+          0.3291 * (document.getElementById("3kTimeMinutes").value * 60 + 
+                parseInt(document.getElementById("3kTimeSeconds").value) +
+                parseInt(document.getElementById("3kTimeMilliSeconds").value) / 100) +
+          0.9082 * (document.getElementById("1500TimeMinutes").value * 60 + 
+                parseInt(document.getElementById("1500TimeSeconds").value) +
+                parseInt(document.getElementById("1500TimeMilliSeconds").value) / 100);
+        let output = document.getElementById("output");
+        let outputTimeMinutes = Math.floor(outputTime / 60);
+        let outputTimeSeconds = outputTime - (outputTimeMinutes * 60);
+        document.write('3kSteeplechase predicted time: ' + outputTimeMinutes + ':' + outputTimeSeconds.toFixed(2))}
+    </script>
+
+    <br><br><br><br>
+    <h5> 
+    The times data were borrowed from tfrrs.org from the top 500 NCAA 3k Steeplechase times from 2022.
+    <br>
+    The data is all based off of sea level times, so convert your times to sea level before using this conversion.
+    <br>
+    This model was created using a linear regression in Python.
+    <br>
+    More code and information can be found on github.com/cwilks2121
+    </h5>
+    </body>
+</html>
