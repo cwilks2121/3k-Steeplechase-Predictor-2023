@@ -27,8 +27,8 @@
       <label for="1500TimeMilliSeconds">.</label>
       <input type="number" id="1500TimeMilliSeconds">
       <br><br>
-      <button onclick="convertTime()">Predict 3kSteeplechase Time</button>
     </form>
+    <button onclick="convertTime()">Predict 3kSteeplechase Time</button>
     <p id="output"></p>
     <script>
       function convertTime() {
@@ -45,7 +45,7 @@
         let output = document.getElementById("output");
         let outputTimeMinutes = Math.floor(outputTime / 60);
         let outputTimeSeconds = outputTime - (outputTimeMinutes * 60);
-        document.write('3kSteeplechase predicted time: ' + outputTimeMinutes + ':' + outputTimeSeconds.toFixed(2))}
+        output.innerHTML = '3kSteeplechase predicted time: ' + outputTimeMinutes + ':' + outputTimeSeconds.toFixed(2)}
     </script>
 
     <br><br><br><br>
