@@ -5,4 +5,4 @@ The data for this project is from https://www.tfrrs.org/lists/3711/2022_NCAA_Div
 
 
 The website for the actual Steeplechase regression can be found at 
-[cwilks2121.github.io](url)
+cwilks2121.github.io
